@@ -1,76 +1,50 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Center</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Center - Home</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- You might add a specific CSS file for the homepage if needed: <link rel="stylesheet" href="css/home.css"> -->
 </head>
-
 <body>
-    
-  <header class="site-header">
-    <a href="index.html" class="site-logo">Event Center</a>
-    <ul class="topnav">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="location.html">Location</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="picture-container">
-    <img class="my_cover" src="https://images.pexels.com/photos/71103/basketball-sports-teams-players-71103.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Placeholder image">
-  </div>
-
-  <main class="site-main">
-    <section class="welcome">
+    <div id="navbar-placeholder"></div>
+    <header class="hero">
+        <div class="hero-content">
       <h1>Welcome to the Event Center</h1>
       <p>The ultimate destination to watch unforgettable basketball games!</p>
-    </section>
-    <br> <br>
-    <section class="about">
+            <a href="pages/events.html" class="button">View Upcoming Events</a>
+        </div>
+    </header>
+
+    <section class="about-us">
     <h2>About Us</h2>
-    <p>The "Basketball Event Center" was established in 1998. It was built to best enchnace our fan's experiecne when
-      watching their favorite teams.</p>
-      </section>
-
-    <section class="events">
-      <h3>Upcoming Events</h3>
-      <br>
-      <div class="events-flexbox">
-        <article class="event">
-          <img
-            src="https://images.pexels.com/photos/32331547/pexels-photo-32331547/free-photo-of-exciting-basketball-game-moment-in-colombia.jpeg?auto=compress&cs=tinysrgb&w=800">
-          <h4>Men's Professional Basketball Games</h4>
-          <p>Join us with some of the biggest names in men's professional basketball.</p>
-        </article>
-
-        <article class="event">
-          <img
-            src="https://images.pexels.com/photos/2346/sport-high-united-states-of-america-ball.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-          <h4>Men's College Basketball Games</h4>
-          <p>Join us for an unforgettable match up between two of the nation's top men's basketball teams.</p>
-        </article>
-
-        <article class="event">
-          <img
-            src="https://media.istockphoto.com/id/467634080/photo/basketball-game.jpg?b=1&s=612x612&w=0&k=20&c=iJdoL62UxP8bhg21kkwOZlm181ozsHNoWaqhwXX6aF0=">
-          <h4>Top High School Boy's Basketball Games</h4>
-          <p>Join us for tip-off! Showcasing the best boy's high school basketball players in the country.</p>
-        </article>
-      </div>
+    <p>The "Basketball Event Center" was established in 1998. It was built to best enchnace our fan's experiecne
+      watching their favorite sport.</p>
     </section>
 
-   
-  </main>
-  <footer class="site-footer">
-    <p>&copy; 2025 Event Center. All Rights Reserved.</p>
-  </footer>
+    <section class="featured-events">
+        <h2>Featured Events</h2>
+        <p>Don't miss out on the excitement! Check out some of our upcoming highlights:</p>
+        <div class="featured-events-grid">
+            <div class="featured-event-card">
+                <h3>Men's Professional Basketball Games</h3>
+                <p>Date: August 20, 2025</p>
+                <a href="pages/events.html#high-school-championship" class="button">Learn More</a>
+            </div>
+            <div class="featured-event-card">
+                <h3>Local Charity Tournament</h3>
+                <p>Date: September 10, 2025</p>
+                <a href="pages/events.html#charity-tournament" class="button">Learn More</a>
+            </div>
+        </div>
+        <div class="view-all-events">
+            <a href="pages/events.html" class="button">View All Events</a>
+        </div>
+    </section>
 
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
 </body>
-
 </html>

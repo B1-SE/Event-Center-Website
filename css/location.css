@@ -1,0 +1,91 @@
+/* css/location.css */
+
+.location-main-content {
+    text-align: center; /* Center the main content within the page */
+}
+
+.location-details {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    gap: 30px; /* Space between address and hours/landmarks */
+    padding: 30px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.location-details address, .location-details .hours-landmarks {
+    flex: 1; /* Allow items to grow and shrink */
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 450px; /* Max width to prevent items from becoming too wide */
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: left; /* Align text within these blocks to the left */
+}
+
+.location-details h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-align: center; /* Ensure internal h2 is centered */
+}
+
+.location-details p {
+    margin-bottom: 8px;
+}
+
+.landmark {
+    font-weight: bold;
+    color: #0056b3; /* Highlight landmarks with a distinct color */
+}
+
+.location-map {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.location-map h2 {
+    margin-bottom: 20px;
+}
+
+.map-embed {
+    max-width: 800px; /* Max width for the map container */
+    margin: 0 auto; /* Center the map container */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Hide anything that overflows the rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.responsive-map-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below the image */
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+@media (max-width: 768px) {
+    .location-details {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+    .location-details address, .location-details .hours-landmarks {
+        max-width: 100%; /* Allow them to take full width on tablets */
+        text-align: center; /* Center text within these blocks on smaller screens */
+    }
+    .location-map h2 {
+        font-size: 1.8em; /* Adjust heading size */
+    }
+}
+
+@media (max-width: 480px) {
+    .location-details {
+        flex-direction: column; /* Stack details on small screens */
+        gap: 15px; /* Reduce gap when stacked */
+    }
+    .location-details address, .location-details .hours-landmarks {
+        padding: 15px;
+    }
+}

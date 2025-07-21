@@ -1,0 +1,271 @@
+/* css/global.css */
+
+/* ... (general body, headings, links, button styles) ... */
+
+/* Navbar */
+/* Basic Navbar Styling */
+.main-navbar {
+    background-color: #333; /* Dark background */
+    padding: 10px 20px;
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Vertically align items */
+    color: white; /* Default text color */
+}
+
+/* Logo Styling */
+.navbar-logo .site-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.navbar-links {
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display links horizontally */
+}
+
+.navbar-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar-links a:hover {
+    color: #ffd700; /* Yellow on hover */
+}
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Positioning for animation */
+    z-index: 10; /* Ensures it's on top */
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Responsive adjustments for smaller screens (e.g., mobile) */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .navbar-links {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        width: 100%;
+        background-color: #444; /* Darker background for expanded menu */
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .navbar-links.active { /* Class to show the menu when hamburger is clicked */
+        display: flex;
+    }
+
+    .navbar-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on smaller screens */
+    }
+
+    /* Styles for the hamburger icon when the menu is open (example for animation) */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Hero Section (Home Page) */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/ECHeroImage.jpeg");
+    background-size: cover; /* */
+    background-position: center; /* */
+    color: #fff;
+    padding: 8em 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    background-attachment: scroll; /* Ensures background image scrolls with content */
+} 
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+/* About Us Section */
+.about-us {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Featured Events Section (Home Page) */
+.featured-events {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.featured-events-grid {
+    display: grid; /* */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.featured-event-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.featured-event-card h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.featured-event-card p {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.featured-event-card .button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.view-all-events {
+    margin-top: 40px;
+}
+
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+/* Mobile devices (portrait and landscape) and small tablets */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    /* Navbar adjustments */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 10px;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .hero {
+        padding: 5em 15px;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .about-us, .featured-events {
+        padding: 30px 15px;
+    }
+
+    .featured-event-card .button {
+        width: 100%;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+}

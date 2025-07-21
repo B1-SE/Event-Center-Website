@@ -1,0 +1,150 @@
+.contact-info, .contact-form {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 700px; /* Limit width of contact sections */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; /* Center content within sections */
+}
+
+.contact-info h2, .contact-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Form Styling */
+.contact-form form {
+    display: grid;
+    gap: 15px; /* Space between form elements */
+    text-align: left; /* Align form labels/inputs to the left */
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block; /* Label on its own line */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%; /* Make input fields take full width */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Highlight focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 150px;
+}
+
+button[type="submit"] {
+    background-color: #ffd700;
+    color: #333;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: block; /* Make the button a block element */
+    width: 100%; /* Make button full width */
+    max-width: 200px; /* Limit max width for better appearance */
+    margin: 20px auto 0; /* Center the button below the form */
+}
+
+button[type="submit"]:hover {
+    background-color: #ffc400;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-info, .contact-form {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .contact-info h2, .contact-form h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+    button[type="submit"] {
+        padding: 10px 15px;
+        font-size: 1em;
+        max-width: 150px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info h2, .contact-form h2 {
+        font-size: 1.5em;
+    }
+    .form-group label {
+        font-size: 0.9em;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    button[type="submit"] {
+        font-size: 0.95em;
+        max-width: 120px;
+    }
+}
+
+.success-message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}

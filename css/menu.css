@@ -1,0 +1,178 @@
+/* css/menu.css */
+
+.menu-table-container {
+    padding: 20px;
+}
+
+/* New: Flexbox wrapper for the table to center it */
+.table-wrapper {
+    display: flex; /* Makes it a flex container */
+    justify-content: center; /* Centers the child (table) horizontally */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+.food-menu-table {
+    width: 100%; /* Table still takes 100% of its wrapper */
+    max-width: 960px; /* Optional: Limit table max width, similar to section */
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+    /* Remove 'margin: auto;' from here as it's now centered by flexbox */
+    /* Remove 'margin-top: 20px;' from here, can be added to wrapper if needed */
+}
+
+.food-menu-table th,
+.food-menu-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.food-menu-table thead th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Category header styling within the table */
+.food-menu-table .category-header th {
+    background-color: #555;
+    color: #ffd700;
+    font-size: 1.1em;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Striped rows for readability */
+.food-menu-table tbody tr:nth-child(odd):not(.category-header) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+.food-menu-table tbody tr:hover:not(.category-header) {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Image styling within the table (if you re-add images later) */
+.menu-item-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    vertical-align: middle;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.menu-item-image:hover {
+    transform: scale(1.05);
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+/* For screens smaller than 768px (tablets and smaller desktops) */
+@media (max-width: 768px) {
+    .food-menu-table th, .food-menu-table td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* For screens smaller than 600px (iPhone SE and other smaller phones) */
+@media (max-width: 350px) {
+    .menu-table-container {
+        overflow-x: hidden; /* Hide horizontal scroll on small screens */
+    }
+
+    .food-menu-table {
+        border: none; /* Remove table borders for card view */
+        box-shadow: none;
+        border-collapse: collapse;
+        /* max-width is removed here to allow flexible width on mobile cards */
+    }
+
+    .food-menu-table thead, .food-menu-table tfoot {
+        display: none; /* Hide the table header and footer */
+    }
+
+    .food-menu-table tbody, .food-menu-table tr, .food-menu-table td {
+        display: block; /* Make rows and cells behave as block elements */
+        width: 100%;
+        border: none; /* Remove cell borders */
+    }
+
+    .food-menu-table tr {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 15px; /* Space between "cards" */
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .food-menu-table tr:hover { /* Hover effect for the card itself */
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .food-menu-table .category-header {
+        display: block; /* Make category header a block */
+        margin: 25px 0 10px;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+    }
+
+    .food-menu-table .category-header th {
+        background-color: #555;
+        color: #ffd700;
+        font-size: 1.2em;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block; /* Allow text to wrap if title is long */
+    }
+
+    .food-menu-table td {
+        position: relative;
+        padding-left: 50%; /* Make space for the pseudo-element label */
+        text-align: right; /* Align value to the right */
+        border-bottom: 1px dashed #eee; /* Separator for items within a card */
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .food-menu-table tr td:last-of-type {
+        border-bottom: none;
+    }
+
+    .food-menu-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%; /* Control width of the "label" */
+        font-weight: bold;
+        color: #333;
+        text-align: left;
+        display: inline-block; /* Ensure it's displayed correctly */
+    }
+    
+    /* Adjustments for very small screens (e.g., iPhone SE portrait) */
+    @media (max-width: 375px) { /* Targeting specifically smaller phones */
+        .food-menu-table td {
+            font-size: 0.9em;
+            padding-left: 48%; /* Adjust padding if needed for very small screens */
+        }
+        .food-menu-table td::before {
+            font-size: 0.85em;
+            width: 43%; /* Adjust width for very small screens */
+        }
+        .food-menu-table .category-header th {
+            font-size: 1.1em;
+        }
+    }
+}

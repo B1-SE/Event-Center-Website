@@ -1,0 +1,99 @@
+/* css/events.css */
+
+.event-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* {Link: DEV Community https://dev.to/wendyver/responsive-web-design-with-css-grid-and-flexbox-2gio} states that the grid-template-columns property automatically adjusts the number of columns based on the available space, with each column having a minimum width of 100 pixels and a maximum of 1 fraction (1fr) of the available space. */
+    gap: 20px;
+    padding: 20px;
+}
+
+.event-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.event-card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+}
+
+.event-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for image hover */
+}
+
+.event-card img:hover {
+    transform: scale(1.03); /* Slightly enlarge image on hover */
+}
+
+.event-card h2 {
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.6em;
+}
+
+.event-card .event-date {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.event-card .event-description {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.event-card .event-location {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+/* For tablets and smaller desktops */
+@media (max-width: 768px) {
+    .event-listings {
+        gap: 15px; /* Slightly reduce gap on smaller screens */
+        padding: 15px;
+    }
+
+    .event-card img {
+        height: 180px; /* Slightly smaller image height */
+    }
+
+    .event-card h2 {
+        font-size: 1.4em;
+    }
+    .event-card .event-description, .event-card .event-location {
+        font-size: 0.9em;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .event-listings {
+        grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+        gap: 20px; /* Keep gap consistent when stacking */
+        padding: 10px;
+    }
+    .event-card {
+        padding: 10px;
+    }
+    .event-card img {
+        height: auto; /* Let image height adapt */
+        max-height: 200px; /* Prevent overly tall images */
+    }
+    .event-card h2 {
+        font-size: 1.2em;
+    }
+}
